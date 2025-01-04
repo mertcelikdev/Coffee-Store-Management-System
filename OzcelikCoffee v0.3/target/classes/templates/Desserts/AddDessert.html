@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Dessert</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+    /* Genel Sayfa Stili */
+    body {
+      font-family: 'Urbanist', sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Başlık */
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #333;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    /* Form Stili */
+    form {
+      width: 100%;
+      max-width: 600px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #555;
+      font-weight: 500;
+    }
+
+    input[type="text"], input[type="number"], textarea, input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button[type="submit"],
+    .go-home-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    button[type="submit"] {
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      color: white;
+    }
+
+    button[type="submit"]:hover {
+      background: #ff8c00;
+    }
+
+    .go-home-btn {
+      background: #333;
+      color: white;
+      text-decoration: none;
+    }
+
+    .go-home-btn:hover {
+      background: #555;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+<h2>Add Dessert</h2>
+<form th:action="@{/desserts/add}" method="post" enctype="multipart/form-data">
+  <div>
+    <label for="name">Tatlı İsmi:</label>
+    <input id="name" type="text" name="name" placeholder="Tatlı İsmi" required>
+  </div>
+
+  <div>
+    <label for="type">Tür:</label>
+    <input id="type" type="text" name="type" placeholder="Tür" required>
+  </div>
+
+  <div>
+    <label for="price">Fiyat:</label>
+    <input id="price" type="number" step="0.01" name="price" placeholder="Enter price" required>
+  </div>
+
+  <div>
+    <label for="stock">Stok :</label>
+    <input id="stock" type="number" name="stock" placeholder="Enter stock quantity" required>
+  </div>
+
+  <div>
+    <label for="file">Görseli Güncelle:</label>
+    <input id="file" type="file" name="file" accept="image/*" required>
+  </div>
+
+  <div class="button-container">
+    <button type="submit">Add Dessert</button>
+    <a class="go-home-btn" href="/">Go Home</a>
+  </div>
+</form>
+</body>
+</html>
