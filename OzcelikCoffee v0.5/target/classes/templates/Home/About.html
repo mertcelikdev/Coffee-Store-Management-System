@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Özçelik Coffee</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+        /* Genel Sayfa Stili */
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* Header */
+        header h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-top: 20px;
+            color: #333;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            border-radius: 0 0 20px 20px;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Sol Kısım: Logo, Hakkımızda, İletişim */
+        .navbar-left {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .navbar-left .navbar-brand img {
+            height: 35px; /* Logo boyutu */
+        }
+
+        .navbar-left .nav-link {
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-left .nav-link:hover {
+            color: #ff8c00;
+        }
+
+        /* Sağ Kısım: Kahveler, Tatlılar, Giriş Yap, Çıkış Yap */
+        .navbar-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar-right .nav-link {
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-right .nav-link:hover {
+            background-color: #ff8c00;
+            color: white;
+        }
+
+        /* İçerik kısmı */
+        .content {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.3rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto; /* Footer'ı en alta yapıştırır */
+        }
+
+        .footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>About Özçelik Coffee</h1>
+</header>
+
+<nav class="navbar">
+    <div class="navbar-left">
+        <!-- Logo ve Sol Menü -->
+        <a class="navbar-brand" href="/">
+            <img src="/images/logo.jpeg" alt="Özçelik Coffee Logo">
+        </a>
+        <a class="nav-link" href="/about">Hakkımızda</a>
+        <a class="nav-link" href="/contact">İletişim</a>
+    </div>
+
+    <div class="navbar-right">
+        <!-- Sağ Menü -->
+        <a class="nav-link" href="/coffees">Kahveler</a>
+        <a class="nav-link" href="/desserts">Tatlılar</a>
+        <a class="nav-link" href="/login">Giriş Yap</a>
+        <a class="nav-link" href="/logout">Çıkış Yap</a>
+    </div>
+</nav>
+
+<section class="content">
+    <h2>Hikayemiz</h2>
+    <p>
+        Özçelik Coffee, 2002 yılında İstanbul’da kuruldu ve kısa sürede kahve severlerin gözdesi haline geldi.
+        Kuruluşumuz, kaliteli kahve çekirdekleri ve titiz işçilikle hazırlanan tatlıları ile sektörde kendine sağlam bir
+        yer edindi. Kahve üretiminde her zaman en iyi kaliteyi hedefleyerek, her fincanda mükemmel bir tat deneyimi
+        sunmayı amaçladık. Yıllar içinde, dünyadaki en kaliteli kahve çekirdeklerini özenle seçerek, geleneksel
+        yöntemlerle hazırladık. Kahve severlere sunduğumuz lezzetler, hem yerel hem de uluslararası alanda beğeni
+        kazandı.
+
+        Tatlılarımız da tıpkı kahvelerimiz gibi özenle seçilmiş malzemelerle hazırlanıyor. Geleneksel tariflerimizi
+        modern dokunuşlarla harmanlayarak, her yaştan müşterimize hitap eden çeşitler sunuyoruz. Özçelik Coffee'nin
+        başarısı, yalnızca kaliteli ürünlerimizle değil, aynı zamanda samimi ve sıcak atmosferimizle de müşterilerimizi
+        ağırlamamıza dayanıyor. Amacımız, her bir müşterimize sadece bir içecek değil, aynı zamanda unutulmaz bir
+        deneyim sunmaktır. Bizim için kahve, bir tutku ve her bir yudumda bu tutkuyu müşterilerimize yansıtmaktan büyük
+        mutluluk duyuyoruz.
+    </p>
+    <h2>Misyonumuz</h2>
+    <p>
+        Özçelik Coffee olarak misyonumuz, sadece en kaliteli kahveleri ve tatlıları sunmak değil, aynı zamanda her bir
+        müşterimize unutulmaz bir deneyim yaşatmaktır. Bizim için kahve, sadece bir içecek değil, bir kültür, bir sohbet
+        ve bir yaşam tarzıdır. Bu yüzden her fincanda özenle seçilmiş en kaliteli çekirdeklerle hazırlanmış kahve ve
+        ustalıkla yapılmış tatlılarla, müşterilerimize kendilerini özel hissettirmeyi amaçlıyoruz.
+
+        Müşteri memnuniyeti, bizim için her şeyden önce gelir. Yıllardır sürdürdüğümüz kaliteli hizmet anlayışımız,
+        müşterilerimizin sadık birer dostumuza dönüşmesine olanak sağlamıştır. Sadece kahve ve tatlılarımızla değil,
+        aynı zamanda samimi ve sıcak bir atmosfer sunarak, her bir müşterimizin kendini evinde gibi hissetmesini
+        istiyoruz. Amacımız, her zaman mükemmelliği hedefleyerek, kahve kültürünü daha geniş kitlelere ulaştırmak ve her
+        bir ziyaretçimize eşsiz bir deneyim yaşatmaktır.
+
+        Özçelik Coffee, kalite ve müşteri memnuniyetini her zaman ön planda tutarak, sektördeki liderliğini sürdürmeye
+        devam edecektir.
+    </p>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2024 Özçelik Coffee. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
